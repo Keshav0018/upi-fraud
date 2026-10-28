@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: payments
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/payments/**
+            - id: alerts
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/alerts/**
+            - id: stats
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/stats
+            - id: stream
+              uri: http://localhost:8081
+              predicates:
+                - Path=/api/stream
+            - id: analytics
+              uri: http://localhost:8082
+              predicates:
+                - Path=/api/analytics/**

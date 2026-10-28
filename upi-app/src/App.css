@@ -1,0 +1,520 @@
+.layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* ---- Phone frame ---- */
+
+.phone {
+  width: 360px;
+  height: 740px;
+  background: #111827;
+  border-radius: 40px;
+  padding: 14px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #f8fafc;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-bar {
+  height: 28px;
+  background: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.screen-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- Home screen ---- */
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.profile-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.profile-vpa {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.balance-card {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.balance-label {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.balance-amount {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.device-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.device-row-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.device-toggle {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.device-toggle button {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.device-toggle button.active {
+  background: #4f46e5;
+  color: white;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.contact-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.contact-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #4338ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.contact-name {
+  font-size: 10px;
+  color: #475569;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.upi-id-row {
+  display: flex;
+  gap: 8px;
+}
+
+.upi-id-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-primary:disabled {
+  background: #c7d2fe;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.payment-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.payment-row:last-child {
+  border-bottom: none;
+}
+
+.payment-row-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-row-payee {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.payment-row-amount {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.status-pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status-PENDING_CHECK, .status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-COMPLETED {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-HELD {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.status-BLOCKED {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty-state {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 12px 0;
+}
+
+/* ---- Pay / Pin / Processing / Result screens ---- */
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #334155;
+  padding: 4px;
+}
+
+.screen-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pay-target {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.pay-target-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #4338ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 auto 8px;
+}
+
+.pay-target-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.pay-target-vpa {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.amount-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  gap: 4px;
+}
+
+.amount-input-row input {
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  font-weight: 700;
+  width: 160px;
+  text-align: center;
+}
+
+.amount-input-row input:focus {
+  outline: none;
+}
+
+.note-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+}
+
+.form-error {
+  color: #b91c1c;
+  font-size: 12px;
+  text-align: center;
+}
+
+.centered-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.pin-dots {
+  display: flex;
+  gap: 14px;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+}
+
+.pin-dot.filled {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.pin-key {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid #e0e7ff;
+  border-top-color: #4f46e5;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.result-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.result-icon.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.result-icon.held {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.result-icon.blocked {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.result-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.result-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  max-width: 260px;
+}
+
+/* ---- Demo panel ---- */
+
+.demo-panel {
+  width: 260px;
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 20px;
+  color: #e2e8f0;
+}
+
+.demo-panel h2 {
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.demo-panel p {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0 0 16px;
+}
+
+.demo-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #334155;
+  color: #f1f5f9;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.demo-button:hover {
+  background: #475569;
+}
+
+.demo-button small {
+  display: block;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.demo-log {
+  margin-top: 16px;
+  font-size: 11px;
+  color: #94a3b8;
+  max-height: 160px;
+  overflow-y: auto;
+  border-top: 1px solid #334155;
+  padding-top: 10px;
+}
+
+.demo-log div {
+  margin-bottom: 4px;
+}

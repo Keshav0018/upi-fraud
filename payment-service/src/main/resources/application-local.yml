@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/payments_db
+    username: payguard
+    password: payguard
+  kafka:
+    bootstrap-servers: localhost:29092
+
+payguard:
+  simulator:
+    enabled: ${SIMULATOR_ENABLED:true}
+    rate-per-sec: ${SIMULATOR_RATE_PER_SEC:1}

@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: payments
+              uri: ${PAYMENT_SERVICE_URL:http://payment-service:8081}
+              predicates:
+                - Path=/api/payments/**
+            - id: alerts
+              uri: ${PAYMENT_SERVICE_URL:http://payment-service:8081}
+              predicates:
+                - Path=/api/alerts/**
+            - id: stats
+              uri: ${PAYMENT_SERVICE_URL:http://payment-service:8081}
+              predicates:
+                - Path=/api/stats
+            - id: stream
+              uri: ${PAYMENT_SERVICE_URL:http://payment-service:8081}
+              predicates:
+                - Path=/api/stream
+            - id: analytics
+              uri: ${ANALYTICS_SERVICE_URL:http://analytics-service:8082}
+              predicates:
+                - Path=/api/analytics/**
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "http://localhost:3000"
+                  - "http://localhost:3001"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders: "*"
+                allowCredentials: false
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
